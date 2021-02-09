@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import Menu from './components/Menu'
+import Orders from './components/Orders'
+import CreateOrder from './components/CreateOrder'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = { showCreate: false }
+  }
+
+  createOrder = () => {
+    console.log('tan')
+    console.log(this.state)
+    this.setState({
+      showCreate: true
+    })
+    console.log(this.state)
+  }
+
+  render () {
+    return (
+      <div className="App">
+        <Menu pageCreate = {this.createOrder}/>    
+        {
+          (this.state.showCreate)?
+            <CreateOrder />
+          :
+            <Orders />
+        }
+      </div>
+    )
+  }
 }
 
 export default App;
