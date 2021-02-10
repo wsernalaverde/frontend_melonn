@@ -28,7 +28,7 @@ class Orders extends Component {
   render () {
     return (
       <div className="container">
-        <div className="cont-table">
+        <div className="center-content">
           <Table items={this.state.orders} />
         </div>
       </div>

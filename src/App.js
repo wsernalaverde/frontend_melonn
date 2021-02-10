@@ -11,19 +11,16 @@ class App extends Component {
     this.state = { showCreate: false }
   }
 
-  createOrder = () => {
-    console.log('tan')
-    console.log(this.state)
+  toggleContent = () => {
     this.setState({
-      showCreate: true
+      showCreate: !this.state.showCreate
     })
-    console.log(this.state)
   }
 
   render () {
     return (
       <div className="App">
-        <Menu pageCreate = {this.createOrder}/>    
+        <Menu toggleContent = {this.toggleContent} backButton = {this.state.showCreate} />    
         {
           (this.state.showCreate)?
             <CreateOrder />

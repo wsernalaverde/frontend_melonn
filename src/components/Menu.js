@@ -10,7 +10,7 @@ function Menu (props) {
           <img src={logo} alt="Melonn" />
         </div>
         <div className="actions">
-          <button onClick={props.pageCreate} className="btn btn-purple">Create Order</button>
+          <button onClick={props.toggleContent} className="btn btn-purple">{props.backButton ? '< Back to list Order' : 'Create Order'}</button>
         </div>
       </div>
     </div>
