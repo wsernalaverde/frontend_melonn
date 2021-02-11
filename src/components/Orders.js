@@ -20,9 +20,7 @@ class Orders extends Component {
 
     fetch(url)
       .then(res => res.json())
-      .then(res => { this.setState({ orders: res.data }) 
-        console.log(res)
-      })
+      .then(res => { this.setState({ orders: res.data }) })
   }
 
   render () {
