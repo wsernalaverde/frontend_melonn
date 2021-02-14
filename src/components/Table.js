@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../Table.css'
 
 function Table (props) {
@@ -10,6 +11,7 @@ function Table (props) {
           <th><p>Order Number</p></th>
           <th><p>Seller Store</p></th> 
           <th><p>Shipping Method</p></th>
+          <th><p>Order details</p></th>
         </tr>
       </thead>
       <tbody>
@@ -20,6 +22,7 @@ function Table (props) {
               <td><p>{item.internalOrderNumber}</p></td>
               <td><p>{item.store}</p></td>
               <td><p>{item.shippingMethod.name}</p></td>
+              <td><Link className="btn btn-purple btn-table" to={`/order-datail/${item._id}`}>View Detail</Link></td>
             </tr>
           )
         }
