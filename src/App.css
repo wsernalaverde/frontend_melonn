@@ -4,6 +4,18 @@
   font-family: Poppins, sans-serif;
 }
 
+strong {
+  font-weight: 600;
+}
+
+h1, h2, p {
+  color: #66727a;
+}
+
+h1 {
+  font-size: 27px;
+}
+
 .input{
   padding: 5px;
   outline: none;
@@ -52,3 +64,55 @@
   text-align: center;
   text-decoration: none;
 }
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+.column-products {
+  flex: 2;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 3px 3px 15px 0 hsl(0deg 0% 66% / 30%);
+  border-radius: 7px;
+  margin: 20px 12px;
+}
+
+.card-title {
+  border-bottom: 1px solid rgb(168 168 168 / 40%);
+  padding: 10px 20px;
+}
+
+.card-title h2 {
+  font-size: 15px;
+}
+
+.card-content {
+  padding: 10px 20px;
+}
+
+.card-content p {
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.table-line-items tr {
+  margin: 10px 0;
+}
+
+.table-line-items th {
+  text-align: left;
+  border-bottom: 1px solid rgb(168 168 168 / 40%);
+  padding: 2px 5px;
+}
+
+.table-line-items td {
+  padding: 5px;
+}
+
