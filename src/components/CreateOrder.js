@@ -14,4 +14,4 @@ class CreateOrder extends Component {
   }
 }
 
-export default CreateOrder;
+export default CreateOrder

@@ -44,7 +44,10 @@ class Form extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault()
-    const data = this.state
+    const data = {...this.state}
+
+    delete data.showSuccess
+    delete data.shippingMethods
 
     const url = `http://localhost:3001/addSellOrder`
 

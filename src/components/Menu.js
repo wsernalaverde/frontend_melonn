@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../logo-melonn.png'
 import '../Menu.css'
 
@@ -10,7 +11,10 @@ function Menu (props) {
           <img src={logo} alt="Melonn" />
         </div>
         <div className="actions">
-          <button onClick={props.toggleContent} className="btn btn-purple">{props.backButton ? '< Back to list Order' : 'Create Order'}</button>
+          {props.externalPage
+            ? <Link className="btn btn-purple" to={'/'}>&lt; Back to list Order</Link>
+            : <button onClick={props.toggleContent} className="btn btn-purple">{props.backButton ? '< Back to list Order' : 'Create Order'}</button>
+          }
         </div>
       </div>
     </div>
