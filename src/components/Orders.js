@@ -16,7 +16,7 @@ class Orders extends Component {
   }
 
   getOrders = () => {
-    const url = `http://localhost:3001/getOrders`
+    const url = `${process.env.REACT_APP_URL_SERVICE}/getOrders`
 
     fetch(url)
       .then(res => res.json())

@@ -12,7 +12,7 @@ const OrderDetail = () => {
   }, [id])
 
   const getOrder = () => {
-    const url = `http://localhost:3001/getOrderDetails/${id}`
+    const url = `${process.env.REACT_APP_URL_SERVICE}/getOrderDetails/${id}`
 
     fetch(url)
       .then(res => res.json())

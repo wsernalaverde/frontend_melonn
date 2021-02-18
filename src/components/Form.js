@@ -30,7 +30,7 @@ class Form extends Component {
   }
 
   getShippingMethods = () => {
-    const url = `http://localhost:3001/getShippingMethods`
+    const url = `${process.env.REACT_APP_URL_SERVICE}/getShippingMethods`
 
     fetch(url)
       .then(res => res.json())
@@ -49,7 +49,7 @@ class Form extends Component {
     delete data.showSuccess
     delete data.shippingMethods
 
-    const url = `http://localhost:3001/addSellOrder`
+    const url = `${process.env.REACT_APP_URL_SERVICE}/addSellOrder`
 
     try {
 
