@@ -32,7 +32,7 @@ class App extends Component {
               <Menu toggleContent = {this.toggleContent} backButton = {this.state.showCreate} />    
               {
                 (this.state.showCreate)?
-                  <CreateOrder />
+                  <CreateOrder goList = {this.toggleContent} />
                 :
                   <Orders />
               }

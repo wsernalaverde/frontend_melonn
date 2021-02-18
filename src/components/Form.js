@@ -82,9 +82,12 @@ class Form extends Component {
           }]  
         })
 
-        setTimeout(() => { this.setState({
-          showSuccess: false
-        })}, 2000)
+        setTimeout(() => { 
+          this.setState({
+            showSuccess: false
+          })
+          this.props.goList()
+        }, 1000)
 
       } else {
         let err = new Error()
@@ -218,10 +221,10 @@ class Form extends Component {
                   <input type="text" value={this.state.lineItems[index].productName} className="form-control" placeholder="Product name" name="productName" onChange={e => this.handleInputProduct(e, index)} required />
                 </div>
                 <div className="form-group">
-                  <input type="text" value={this.state.lineItems[index].productQty} className="form-control" placeholder="Product qty" name="productQty" onChange={e => this.handleInputProduct(e, index)} required />
+                  <input type="number" value={this.state.lineItems[index].productQty} className="form-control" placeholder="Product qty" name="productQty" onChange={e => this.handleInputProduct(e, index)} required />
                 </div>
                 <div className="form-group">
-                  <input type="text" value={this.state.lineItems[index].productWeight} className="form-control" placeholder="Product weight" name="productWeight" onChange={e => this.handleInputProduct(e, index)} required />
+                  <input type="number" value={this.state.lineItems[index].productWeight} className="form-control" placeholder="Product weight" name="productWeight" onChange={e => this.handleInputProduct(e, index)} required />
                 </div> 
               </div>
             )

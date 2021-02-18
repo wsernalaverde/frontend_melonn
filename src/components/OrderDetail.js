@@ -16,7 +16,7 @@ const OrderDetail = () => {
 
     fetch(url)
       .then(res => res.json())
-      .then(res => { 
+      .then(res => {
         setOrder(res.data[0])
       })
   }
@@ -58,21 +58,38 @@ const OrderDetail = () => {
               </div>
               <div className="card-content">
                 <table className="table-line-items">
-                  <tr>
-                    <th><p>Product name:</p></th>
-                    <th><p>Product qty:</p></th>
-                    <th><p>Product weight:</p></th>
-                  </tr>         
-                  {
-                    order.lineItems && order.lineItems.map((item, index) =>
-                      <tr key={index}>
-                        <td><p>{item.productName}</p></td>
-                        <td><p>{item.productQty}</p></td>
-                        <td><p>{item.productWeight}</p></td>
-                      </tr>
-                    )
-                  }
+                  <tbody>
+                    <tr>
+                      <th><p>Product name:</p></th>
+                      <th><p>Product qty:</p></th>
+                      <th><p>Product weight:</p></th>
+                    </tr>         
+                    {
+                      order.lineItems && order.lineItems.map((item, index) =>
+                        <tr key={index}>
+                          <td><p>{item.productName}</p></td>
+                          <td><p>{item.productQty}</p></td>
+                          <td><p>{item.productWeight}</p></td>
+                        </tr>
+                      )
+                    }
+                  </tbody>
                 </table>
+              </div>
+            </div>
+            <div className="card">
+              <div className="card-title">
+                <h2>Promise dates</h2>
+              </div>
+              <div className="card-content">
+                <p><strong>Pack promise min:</strong> {order.calculateShippings && order.calculateShippings.pack_promise_min || 'Null'}</p>
+                <p><strong>Pack promise max:</strong> {order.calculateShippings && order.calculateShippings.pack_promise_max || 'Null'}</p>
+                <p><strong>Ship promise min:</strong> {order.calculateShippings && order.calculateShippings.ship_promise_min || 'Null'}</p>
+                <p><strong>Ship promise max:</strong> {order.calculateShippings && order.calculateShippings.ship_promise_max || 'Null'}</p>
+                <p><strong>Delivery promise min:</strong> {order.calculateShippings && order.calculateShippings.delivery_promise_min || 'Null'}</p>
+                <p><strong>Delivery promise max:</strong> {order.calculateShippings && order.calculateShippings.delivery_promise_max || 'Null'}</p>
+                <p><strong>Ready pickup promise min:</strong> {order.calculateShippings && order.calculateShippings.ready_pickup_promise_min || 'Null'}</p>
+                <p><strong>Ready pickup promise max:</strong> {order.calculateShippings && order.calculateShippings.ready_pickup_promise_max || 'Null'}</p>
               </div>
             </div>
           </div>
